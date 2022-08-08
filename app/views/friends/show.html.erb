@@ -1,0 +1,16 @@
+
+
+<div class="text-light bg-dark p-5 rounded-sm m-5">
+  <h1 class="display-4"><strong>Hello,</strong> <%=@friend.first_name %> <%= @friend.last_name %></h1>
+  <p class="lead"><%= @friend.email %></p>
+  <hr class="my-4">
+  <p><%= @friend.twitter %>        <strong>|</strong>        <%= @friend.phone %></p>
+  <%= link_to "Edit this friend", edit_friend_path(@friend), class:"btn btn-primary btn-sm"; %>
+  </div>
+<div>
+  <%= link_to "Back to friends", friends_path, class:"btn btn-primary btn-sm";%>
+  <br>
+  <%= button_to "Destroy this friend", @friend, method: :delete,  class:"btn btn-primary btn-sm", role:"button";%>
+  
+
+</div>

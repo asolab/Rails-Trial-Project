@@ -1,0 +1,50 @@
+
+<% if user_signed_in? %>
+<h1>Friends</h1>
+
+<div id="friends">
+    
+   <div>
+    <table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Name </th>
+      <th scope="col">Email </th>
+      <th scope="col">Phone </th>
+      <th scope="col">Twitter </th>
+      
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |friend| %>
+    <% if friend.user == current_user %>
+  <tr>
+      <td scope="row"></td>
+      <td> <%= link_to friend.first_name + " " + friend.last_name, friend, style:"text-decoration: none;"%></td>
+      <td><%= friend.email %></td>
+      <td><%= friend.phone %></td>
+      <td><%= friend.twitter %></td>
+     
+      <td><%= button_to "Destroy this friend", @friend, method: :delete,  class:"btn btn-outline-danger btn-md", role:"button";%></td>
+      </tr>
+   <% end %>
+   <% end %>
+    </tbody>
+  </table>
+  </div>
+    
+
+
+</div>
+
+
+<% else %>
+
+<h1>Hello World! </h1>
+<p>Asolab Ruby!</p>
+<% end %>
+
+
+
