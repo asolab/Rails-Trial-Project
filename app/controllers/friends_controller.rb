@@ -6,9 +6,17 @@ class FriendsController < ApplicationController
 
   # GET /friends or /friends.json
   def index
-    @friends = Friend.all
+    #@friends = Friend.where(["first_name LIKE ?","%#{params[:search]}%"])
+    @q = Friend.ransack(params[:q])
+    @friends = @q.result(distinct: true)
   end
 
+def search
+  @friends = Friend.where(["first_name LIKE ?","%#{params[:search]}%"])
+
+ 
+  
+end
   # GET /friends/1 or /friends/1.json
   def show
   end
@@ -27,8 +35,8 @@ class FriendsController < ApplicationController
   # POST /friends or /friends.json
   def create
     #@friend = Friend.new(friend_params)
-     @friend  = current_user.friends.build(friend_params)
-       respond_to do |format|
+      @friend  = current_user.friends.build(friend_params)
+      respond_to do |format|
       if @friend.save
         format.html { redirect_to friend_url(@friend), notice: "Friend was successfully created." }
         format.json { render :show, status: :created, location: @friend }

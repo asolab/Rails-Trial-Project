@@ -1,6 +1,17 @@
 
 <% if user_signed_in? %>
 <h1>Friends</h1>
+<%#= form_tag friends_path, :method => 'get' do %>
+ <%#= text_field_tag :search, params[:search] %>
+    <%#= submit_tag  "search" %>
+    <%# end %>
+    
+        <%= search_form_for @q do |f| %> 
+  <div style="width:130px">  <%= f.search_field :first_name_or_last_name_or_email_or_phone_or_twitter_cont, placeholder:"Search for Your Details"%></div>
+<div style="width:130px;margin-left: 200px;margin-top: -30px"><%= f.submit class:"btn btn-outline-success btn-sm";%></div>
+
+<% end %>
+    <br>
 
 <div id="friends">
     
@@ -22,7 +33,7 @@
     <% if friend.user == current_user %>
   <tr>
       <td scope="row"></td>
-      <td> <%= link_to friend.first_name + " " + friend.last_name, friend, style:"text-decoration: none;"%></td>
+      <td> <%= link_to friend.first_name.capitalize + " " + friend.last_name.capitalize, friend, style:"text-decoration: none;"%></td>
       <td><%= friend.email %></td>
       <td><%= friend.phone %></td>
       <td><%= friend.twitter %></td>
