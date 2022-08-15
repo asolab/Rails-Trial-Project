@@ -34,7 +34,7 @@
   <tr>
       <td scope="row"></td>
       <td> <%= link_to friend.first_name.capitalize + " " + friend.last_name.capitalize, friend, style:"text-decoration: none;"%></td>
-      <td><%= friend.email %></td>
+      <td><%= friend.email.capitalize %></td>
       <td><%= friend.phone %></td>
       <td><%= friend.twitter %></td>
      
@@ -54,7 +54,7 @@
 <% else %>
 
 <h1>Hello World! </h1>
-<p>Asolab Ruby!</p>
+<p>Welcome to Asolab Ruby!</p>
 <% end %>
 
 

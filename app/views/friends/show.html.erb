@@ -2,14 +2,14 @@
 
 <div class="text-light bg-dark p-5 rounded-sm m-5">
   <h1 class="display-4"><strong>Hello,</strong> <%=@friend.first_name.capitalize! %> <%= @friend.last_name.capitalize!  %></h1>
-  <p class="lead"><%= @friend.email %></p>
+  <p class="lead"><%= @friend.email.capitalize %></p>
   <hr class="my-4">
-  <p><%= @friend.twitter %>        <strong>|</strong>        <%= @friend.phone %></p>
+  <p><%= @friend.twitter.capitalize %>        <strong>|</strong>        <%= @friend.phone %></p>
   <%= link_to "Edit this friend", edit_friend_path(@friend), class:"btn btn-primary btn-sm"; %>
   </div>
 <div style="width:130px;margin-left: 50px;"><%= link_to "Back to friends", friends_path, class:"btn btn-dark btn-sm";%></div>
   
-<div style="width:130px;margin-left: 180px;margin-top: -30px" > <%= button_to "Delete Account", @friend, method: :delete,  class:"btn btn-danger btn-sm", role:"button";%></div> 
+<div style="width:130px;margin-left: 180px;margin-top: -30px" > <%= button_to "Delete Account", @friend, method: :delete, :onclick => "return confirm('DELETE ACCOUNT?')", class:"btn btn-danger btn-sm";%></div> 
   
 
 
