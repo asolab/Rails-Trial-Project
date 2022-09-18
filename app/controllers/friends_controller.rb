@@ -42,7 +42,7 @@ end
         format.json { render :show, status: :created, location: @friend }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
+        format.json { render json: @friend.errors, status: :unprocessable_entity } 
       end
     end
   end
@@ -62,9 +62,13 @@ end
 
   # DELETE /friends/1 or /friends/1.json
   def destroy
+    @friends = Friend.find(params[:id])
     @friend.destroy
 
+
     respond_to do |format|
+
+      format.js
       format.html { redirect_to friends_url, notice: "Friend was successfully destroyed." }
       format.json { head :no_content }
     end

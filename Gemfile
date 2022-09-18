@@ -82,3 +82,11 @@ group :test do
 end
 
 gem "ransack", "~> 3.2"
+
+gem 'html5_validators'
+
+gem "letter_opener", group: :development
+
+
+
+

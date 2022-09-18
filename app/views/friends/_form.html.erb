@@ -5,7 +5,7 @@
 
       <ul>
         <% friend.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+         <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
@@ -14,27 +14,27 @@
   <div class="mb-3" >
     
    
-    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name";%>
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name", :required => true;%>
   </div>
 
   <div class="mb-3">
     
-    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name";  %>
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name", :required => true;  %>
   </div>
 
   <div class="mb-3">
     
-    <%= form.text_field :email, class:"form-control", placeholder:"Email"; %>
+    <%= form.text_field :email, class:"form-control", placeholder:"Email", :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}'; %>
   </div>
 
   <div class="mb-3">
    
-    <%= form.text_field :phone, class:"form-control", placeholder:"phone"; %>
+    <%= form.text_field :phone, class:"form-control", placeholder:"phone", :required => true; %>
   </div>
 
   <div class="mb-3">
    
-    <%= form.text_field :twitter, class:"form-control", placeholder:"twitter";%>
+    <%= form.text_field :twitter, class:"form-control", placeholder:"twitter", :required => true;%>
   </div>
 <div class="mb-3">
    
