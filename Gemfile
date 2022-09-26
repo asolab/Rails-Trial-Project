@@ -87,6 +87,7 @@ gem 'html5_validators'
 
 gem "letter_opener", group: :development
 
+gem 'figaro'
 
 
 
