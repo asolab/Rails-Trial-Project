@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'asolabrails.herokuapp.com', protocol: 'https' }
-  config.action_mailer.delivery_method = :smtp
+ 
   config.action_mailer.perform_deliveries = true
 
 #config.action_mailer.smtp_settings = {
@@ -13,16 +13,19 @@ Rails.application.configure do
   #password:              Rails.application.credentials.dig(:google_smtp, :password),
   #authentication:        'plain',
   #enable_starttls_auto:  true }
-
-  config.action_mailer.smtp_settings = {
+  config.action_mailer.delivery_method = :smtp
+ config.action_mailer.smtp_settings = {
  address:              'smtp.mandrillapp.com',
- port:                  2525,
+ port:                  587,
  domain:               'hausasports.art',
- user_name:             ENV['asolab'],
- password:              ENV['NeuG6d8AtL9bC-fjNqQceQ'],
+ user_name:             'asolab',
+ password:              'NeuG6d8AtL9bC-fjNqQceQ',
  authentication:        :plain,
  enable_starttls_auto:   true
 }
+
+
+ 
   
   # Settings specified here will take precedence over those in config/application.rb.
   
