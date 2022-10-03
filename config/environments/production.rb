@@ -14,16 +14,16 @@ Rails.application.configure do
   #authentication:        'plain',
   #enable_starttls_auto:  true }
   config.action_mailer.delivery_method = :smtp
- config.action_mailer.smtp_settings = {
+
+  config.action_mailer.smtp_settings = {
  address:              'smtp.mandrillapp.com',
  port:                  587,
  domain:               'hausasports.art',
- user_name:             'asolab',
- password:              'NeuG6d8AtL9bC-fjNqQceQ',
+ user_name:             Rails.application.credentials.dig(:mandrill_smtp, :email),
+ password:              Rails.application.credentials.dig(:mandrill_smtp, :password),
  authentication:        :plain,
  enable_starttls_auto:   true
 }
-
 
  
   
