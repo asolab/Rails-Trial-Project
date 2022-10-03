@@ -18,8 +18,8 @@ Rails.application.configure do
  address:              'smtp.mandrillapp.com',
  port:                  2525,
  domain:               'hausasports.art',
- user_name:             Rails.application.credentials.dig(:mandrill_smtp, :email),
- password:              Rails.application.credentials.dig(:mandrill_smtp, :password),
+ user_name:             ENV['asolab'],
+ password:              ENV['NeuG6d8AtL9bC-fjNqQceQ'],
  authentication:        :plain,
  enable_starttls_auto:   true
 }
