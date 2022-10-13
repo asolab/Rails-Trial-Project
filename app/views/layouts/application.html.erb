@@ -29,12 +29,12 @@
         </br>
         <div class="alert alert-danger">
         <p class= 'alert'><%= alert %></p>
-        <div class="container">
+
   <br>
   <% flash.each do |key, message| %>
     <p class="alert alert-<%= key %>"><%= message %></p>
   <% end %>
-</div>
+
           <%= yield %>
           </div>
 
