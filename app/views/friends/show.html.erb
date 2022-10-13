@@ -23,6 +23,8 @@
 
 <div class="text-light bg-dark p-5 rounded-sm m-5">
   <%= turbo_frame_tag "friend" do %> 
+  <%= image_tag current_user.image, size: '50x50' if current_user.image?  %>
+  <%= current_user.name %>
   <h1 class="display-4"><strong>Hello,</strong> <%=@friend.first_name.capitalize! %> <%= @friend.last_name.capitalize!  %></h1>
   <p class="lead"><%= @friend.email.capitalize %></p>
   <hr class="my-4">

@@ -89,5 +89,13 @@ gem "letter_opener", group: :development
 
 gem 'figaro'
 
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+
+gem "omniauth-rails_csrf_protection"
+
+gem 'omniauth-google-oauth2'
+
+gem 'dotenv-rails'
+
 
 
