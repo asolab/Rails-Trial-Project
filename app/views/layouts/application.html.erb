@@ -29,16 +29,13 @@
         </br>
         <div class="alert alert-danger">
         <p class= 'alert'><%= alert %></p>
+        <div class="container">
+  <br>
+  <% flash.each do |key, message| %>
+    <p class="alert alert-<%= key %>"><%= message %></p>
+  <% end %>
+</div>
           <%= yield %>
-          <dialog id="turbo-confirm">
-            <form method="dialog">
-              <p> are you sure? </p>
-              <div>
-                <button value="cancel">Cancel</button>
-                <button value="confirm">Confirm</button>
-              </div>
-              </form>
-           </dialog>
           </div>
 
       
