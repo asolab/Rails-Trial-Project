@@ -14,16 +14,16 @@
             
               <div class="row">
 
-                <%= form_for @contact do |f| %>
+                <%= form_for @contact, auto_html5_validation: false do |f| %>
                 <div class="col-md-8 form-group mb-5">
                   <%= f.label :name, class: "col-form-label" %></br>
-                  <%= f.text_field :name, required: false, class: "col-md-6 contact-form-text-area", placeholder: "Your Name" %></br>
+                  <%= f.text_field :name, required: true, class: "col-md-6 contact-form-text-area", placeholder: "Your Name" %></br>
                  
                 </div>
                 <div class="col-md-6 form-group mb-5">
                   
                   <%= f.label :email, class: "col-form-label" %></br>
-                  <%= f.text_field :email, required: true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', class: "col-md-8 contact-form-text-area", placeholder: "#sendgrid use aso@hausasports.art as your email" %></br>
+                  <%= f.text_field :email, required: true, pattern: '[^@]+@[^@]+\.[a-zA-Z]{2,6}', class: "col-md-8 contact-form-text-area", placeholder: "#sendgrid use aso@hausasports.art as your email" %></br>
                   
                 </div>
               </div>
