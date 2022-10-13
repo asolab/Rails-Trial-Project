@@ -6,15 +6,30 @@ config.action_mailer.default_url_options = { :host => 'localhost:4000' }
 config.action_mailer.perform_deliveries = true
 
  config.action_mailer.delivery_method = :smtp
- config.action_mailer.smtp_settings = {
- address:              'smtp.mandrillapp.com',
- port:                  587,
- domain:               'hausasports.art',
- user_name:             Rails.application.credentials.dig(:mandrill_smtp, :email),
- password:              Rails.application.credentials.dig(:mandrill_smtp, :password),
- authentication:        :plain,
- enable_starttls_auto:   true
+ #config.action_mailer.smtp_settings = {
+ #address:              'smtp.mandrillapp.com',
+ #port:                  587,
+ #domain:               'hausasports.art',
+ #user_name:             Rails.application.credentials.dig(:mandrill_smtp, :email),
+ #password:              Rails.application.credentials.dig(:mandrill_smtp, :password),
+ #authentication:        :plain,
+ #enable_starttls_auto:   true
+#}
+
+
+
+ 
+ActionMailer::Base.smtp_settings = {
+  user_name:  Rails.application.credentials.dig(:sendgrid_smtp, :username), # This is the string literal 'apikey', NOT the ID of your API key
+  password:   Rails.application.credentials.dig(:sendgrid_smtp, :password), # This is the secret sendgrid API key which was issued during API key creation
+  domain:    'hausasports.art',
+  address:   'smtp.sendgrid.net',
+  port:  587,
+  authentication:  :plain,
+  enable_starttls_auto:  true
 }
+ 
+
 # Settings specified here will take precedence over those in config/application.rb.
 
 
