@@ -7,8 +7,8 @@
     <%# end %>
     
         <%= search_form_for @q do |f| %> 
-  <div style="width:130px">  <%= f.search_field :first_name_or_last_name_or_email_or_phone_or_twitter_cont, placeholder:"Search for Your Details"%></div>
-<div style="width:130px;margin-left: 200px;margin-top: -30px"><%= f.submit class:"btn btn-outline-success btn-sm";%></div>
+  <div>  <%= f.search_field :first_name_or_last_name_or_email_or_phone_or_twitter_cont, placeholder:"Search for Your Details", class: "col-lg-3";%></div>
+<div style="width:130px;margin-left: 320px;margin-top: -30px"><%= f.submit class:"btn btn-outline-success btn-sm";%></div>
 
 <% end %>
     <br>
