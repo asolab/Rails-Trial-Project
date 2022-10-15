@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-validates :email, presence: true, uniqueness: true
+  #validates :email, presence: true, uniqueness: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, 
@@ -9,9 +9,7 @@ validates :email, presence: true, uniqueness: true
 
          has_many :friends 
 
-      def email_required?
-      false
-      end 
+     
 
          
         
@@ -29,9 +27,6 @@ validates :email, presence: true, uniqueness: true
      user.provider = access_token.provider
      user.skip_confirmation!
      user.save!
-     
      user
-
-
 end
 end
