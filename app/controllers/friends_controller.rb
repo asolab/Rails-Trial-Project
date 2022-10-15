@@ -6,17 +6,15 @@ class FriendsController < ApplicationController
 
   # GET /friends or /friends.json
   def index
-    #@friends = Friend.where(["first_name LIKE ?","%#{params[:search]}%"])
     @q = Friend.ransack(params[:q])
     @friends = @q.result(distinct: true)
   end
 
-def search
-  @friends = Friend.where(["first_name LIKE ?","%#{params[:search]}%"])
+
 
  
   
-end
+
   # GET /friends/1 or /friends/1.json
   def show
   end

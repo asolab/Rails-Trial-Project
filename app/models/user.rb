@@ -5,7 +5,7 @@ validates :email, presence: true, uniqueness: true
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:github, :google_oauth2]
+         :confirmable, :omniauthable, omniauth_providers: [:github, :google_oauth2]
 
          has_many :friends 
 
@@ -27,7 +27,8 @@ validates :email, presence: true, uniqueness: true
      user.image = access_token.info.image
      user.uid = access_token.uid
      user.provider = access_token.provider
-     user.save
+     user.skip_confirmation!
+     user.save!
      
      user
 
