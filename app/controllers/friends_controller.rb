@@ -5,7 +5,7 @@ class FriendsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy, :show]
 
   # GET /friends or /friends.json
-  def index
+  def index 
     @q = Friend.ransack(params[:q])
     @friends = @q.result(distinct: true)
   end

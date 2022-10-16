@@ -7,6 +7,7 @@ import "@hotwired/turbo-rails"
 
 import "controllers"
 data: { turbo: false }
+Turbo.session.drive = false
 
 
 

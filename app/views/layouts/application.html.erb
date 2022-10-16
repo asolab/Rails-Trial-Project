@@ -22,21 +22,23 @@
 
     <%= render 'home/header' %>
         <div class= "container">
-          <br>
-             <% if notice %>
+          <% if notice %>
           <%= render "layouts/alert" %>
           <% end %>
         </br>
+
         <div class="alert alert-danger">
         <p class= 'alert'><%= alert %></p>
+       
+      
 
-  <br>
+  
   <% flash.each do |key, message| %>
     <p class="alert alert-<%= key %>"><%= message %></p>
   <% end %>
 
           <%= yield %>
-          </div>
+         
 
       
     <!-- Optional JavaScript; choose one of the two! -->

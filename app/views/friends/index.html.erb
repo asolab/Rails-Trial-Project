@@ -1,11 +1,6 @@
 
 <% if user_signed_in? %>
 <h1>Friends</h1>
-<%#= form_tag friends_path, :method => 'get' do %>
- <%#= text_field_tag :search, params[:search] %>
-    <%#= submit_tag  "search" %>
-    <%# end %>
-    
         <%= search_form_for @q do |f| %> 
   <div>  <%= f.search_field :first_name_or_last_name_or_email_or_phone_or_twitter_cont, placeholder:"Search for Your Details", class: "col-lg-3";%></div>
 <div style="width:130px;margin-left: 320px;margin-top: -30px"><%= f.submit class:"btn btn-outline-success btn-sm";%></div>
@@ -16,7 +11,7 @@
 <div id="friends">
     
    <div>
-    <table class="table table-striped">
+    <table class="table table-hover ">
   <thead class="table-dark">
     <tr>
       <th scope="col"></th>
@@ -38,7 +33,9 @@
       <td><%= friend.phone %></td>
       <td><%= friend.twitter %></td>
      
-      <td><%= button_to "Destroy this friend", friend, method: :delete,  class:"btn btn-outline-danger btn-md";%></td>
+      <td><%= button_to "Destroy this friend", friend, method: :delete,  class:"btn btn-outline-danger btn-md",  :onclick => "return confirm('DELETE ACCOUNT?')";%></td>
+      
+
       
  
       </tr>
